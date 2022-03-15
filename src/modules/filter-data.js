@@ -13,7 +13,7 @@ export  function filterWeatherData(weatherData) {
 
 function filterLocation(location) {
   const city = location.name;
-  if (location.country === "United States of America") {
+  if (location.country.includes("United States of America")) {
     const stateOrCountry = location.region;
     return { city, stateOrCountry };
   } else {
