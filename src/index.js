@@ -1,1 +1,1 @@
-import "./tests/api-fetch-tests";
+import "./tests/filter-data-tests";

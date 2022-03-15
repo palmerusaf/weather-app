@@ -10,8 +10,6 @@ async function get7DayForecastFromWeatherServer(queryLocation) {
   } catch (error) {
     if (error.message.includes("NetworkError")) {
       throw "Unable to connect to server.";
-    } else {
-      throw error;
     }
   }
 }
