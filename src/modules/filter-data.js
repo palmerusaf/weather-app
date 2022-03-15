@@ -1,5 +1,4 @@
-export async function filterWeatherData(weatherData) {
-  weatherData = await weatherData;
+export  function filterWeatherData(weatherData) {
   if (weatherData.error) {
     throw weatherData.error.message;
   }
