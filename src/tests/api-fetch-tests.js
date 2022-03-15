@@ -1,3 +1,3 @@
-import { get7DayForecastFromWeatherServer } from "../modules/api-fetch";
+import { getCurrentForecastFromWeatherServer } from "../modules/api-fetch";
 
-get7DayForecastFromWeatherServer("montgomery, al").then(console.log).catch(console.log)
+getCurrentForecastFromWeatherServer("montgomery, al").then(console.log).catch(console.log)
