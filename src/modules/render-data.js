@@ -77,7 +77,7 @@ function renderCurrentWeather(current) {
       label.textContent = temperatureLabelText;
 
       const tempInC = document.createElement("span");
-      tempInC.classList.add("temperature__c", "temperature__data");
+      tempInC.classList.add("temperature__c", "temperature__data", "hidden");
       tempInC.textContent = ` ${temperatureData[0]} C`;
       label.appendChild(tempInC);
 
@@ -108,10 +108,10 @@ function changeStyleToDayOrNight(current) {
   const displayContainer = document.querySelector(".display-container");
   const isDay = current.is_day;
   if (isDay) {
-    displayContainer.classList.add('day')
-    displayContainer.classList.remove('night')
+    displayContainer.classList.add("day");
+    displayContainer.classList.remove("night");
   } else {
-    displayContainer.classList.add('night')
-    displayContainer.classList.remove('day')
+    displayContainer.classList.add("night");
+    displayContainer.classList.remove("day");
   }
 }
