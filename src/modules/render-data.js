@@ -1,12 +1,14 @@
 export function renderPageBasedOnData(data) {
   const displayContainer = document.querySelector(".display-container");
   clearDisplay(displayContainer);
+
   const { location, current } = data;
-  console.log(data);
   const locationDisplay = renderLocationName(location);
   const currentWeatherDisplay = renderCurrentWeather(current);
+
   displayContainer.appendChild(locationDisplay);
   displayContainer.appendChild(currentWeatherDisplay);
+
   changeStyleToDayOrNight(current, displayContainer);
 }
 

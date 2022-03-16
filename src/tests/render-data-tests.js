@@ -5,9 +5,11 @@ import { getCurrentForecastFromWeatherServer } from "../modules/api-fetch";
 async function dataRenderTest(data) {
   const rawData = await getCurrentForecastFromWeatherServer(data);
   const weatherData = filterWeatherData(rawData);
+  //   console.log(weatherData);
   renderPageBasedOnData(weatherData);
 }
 
-dataRenderTest("london");
-dataRenderTest("montgomery, al");
+dataRenderTest("london")
+  .then(() => dataRenderTest("montgomery, al"))
+  .then(() => dataRenderTest("tulsa"));
 // dataRenderTest();
