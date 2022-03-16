@@ -25,9 +25,11 @@ function renderCurrentWeather(current) {
   const currentWeatherDisplay = document.createDocumentFragment();
   const conditionDisplay = renderCondition(current.condition);
   const temperatureDisplay = renderTemperatures(current);
+  const humidityDisplay = renderHumidity(current.humidity);
 
   currentWeatherDisplay.appendChild(conditionDisplay);
   currentWeatherDisplay.appendChild(temperatureDisplay);
+  currentWeatherDisplay.appendChild(humidityDisplay);
 
   return currentWeatherDisplay;
 
@@ -72,16 +74,29 @@ function renderCurrentWeather(current) {
       label.textContent = temperatureLabelText;
 
       const tempInC = document.createElement("span");
-      tempInC.classList.add("temperature__c");
+      tempInC.classList.add("temperature__c", "temperature__data");
       tempInC.textContent = ` ${temperatureData[0]} C`;
       label.appendChild(tempInC);
 
       const tempInF = document.createElement("span");
-      tempInF.classList.add("temperature__f");
+      tempInF.classList.add("temperature__f", "temperature__data");
       tempInF.textContent = ` ${temperatureData[1]} F`;
       label.appendChild(tempInF);
 
       return label;
     }
+  }
+
+  function renderHumidity(humidityData) {
+    const label = document.createElement("div");
+    label.classList.add("temperature__label");
+    label.textContent = "Humidity:";
+
+    const humidity = document.createElement("span");
+    humidity.classList.add("temperature__data");
+    humidity.textContent = ` ${humidityData}%`;
+    label.appendChild(humidity);
+
+    return label;
   }
 }
