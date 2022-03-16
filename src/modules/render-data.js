@@ -7,6 +7,7 @@ export function renderPageBasedOnData(data) {
   const currentWeatherDisplay = renderCurrentWeather(current);
   displayContainer.appendChild(locationDisplay);
   displayContainer.appendChild(currentWeatherDisplay);
+  changeStyleToDayOrNight(current, displayContainer);
 }
 
 function renderLocationName(location) {
@@ -98,5 +99,17 @@ function renderCurrentWeather(current) {
     label.appendChild(humidity);
 
     return label;
+  }
+}
+
+function changeStyleToDayOrNight(current) {
+  const displayContainer = document.querySelector(".display-container");
+  const isDay = current.is_day;
+  if (isDay) {
+    displayContainer.classList.add('day')
+    displayContainer.classList.remove('night')
+  } else {
+    displayContainer.classList.add('night')
+    displayContainer.classList.remove('day')
   }
 }
