@@ -1,1 +1,1 @@
-import "./tests/handle-input-tests";
+import "./tests/render-data-tests";

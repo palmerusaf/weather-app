@@ -24,7 +24,10 @@ function clearDisplay(display) {
 function renderCurrentWeather(current) {
   const currentWeatherDisplay = document.createDocumentFragment();
   const conditionDisplay = renderCondition(current.condition);
+  const temperatureDisplay = renderTemperatures(current);
+
   currentWeatherDisplay.appendChild(conditionDisplay);
+  currentWeatherDisplay.appendChild(temperatureDisplay);
 
   return currentWeatherDisplay;
 
@@ -39,5 +42,46 @@ function renderCurrentWeather(current) {
     conditionFragment.appendChild(icon);
     conditionFragment.appendChild(conditionText);
     return conditionFragment;
+  }
+
+  function renderTemperatures(current) {
+    const temperatureSection = document.createElement("div");
+    temperatureSection.classList.add("temperature");
+
+    const currentTemp = renderTemperatureElement(
+      "Current:",
+      current.temp_c,
+      current.temp_f
+    );
+    temperatureSection.appendChild(currentTemp);
+
+    const feelsLikeTemp = renderTemperatureElement(
+      "Feels Like:",
+      current.feelslike_c,
+      current.feelslike_f
+    );
+    temperatureSection.appendChild(feelsLikeTemp);
+    return temperatureSection;
+
+    function renderTemperatureElement(
+      temperatureLabelText,
+      ...temperatureData
+    ) {
+      const label = document.createElement("div");
+      label.classList.add("temperature__label");
+      label.textContent = temperatureLabelText;
+
+      const tempInC = document.createElement("span");
+      tempInC.classList.add("temperature__c");
+      tempInC.textContent = ` ${temperatureData[0]} C`;
+      label.appendChild(tempInC);
+
+      const tempInF = document.createElement("span");
+      tempInF.classList.add("temperature__f");
+      tempInF.textContent = ` ${temperatureData[1]} F`;
+      label.appendChild(tempInF);
+
+      return label;
+    }
   }
 }
