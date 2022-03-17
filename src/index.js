@@ -1,3 +1,7 @@
+// REMOVE TEST //
+import "./tests/status-messages-tests";
+// REMOVE TEST //
+
 import { getCurrentForecastFromWeatherServer } from "./modules/api-fetch";
 import { filterWeatherData } from "./modules/filter-data";
 import { getFormValue } from "./modules/handle-input";
