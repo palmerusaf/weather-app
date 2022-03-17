@@ -1,11 +1,9 @@
 export function handleUnitToggleClick(event) {
-  console.log(isDisplayEmpty());
   if (isDisplayEmpty()) {
     return;
   }
   changeClassForToggleButton();
   changeClassForTemperatures();
-  console.log(event);
 }
 
 function changeClassForToggleButton() {
