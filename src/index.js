@@ -1,7 +1,8 @@
-// REMOVE TEST //
-import "./tests/status-messages-tests";
-// REMOVE TEST //
-
+import {
+  clearMessages,
+  displayError,
+  displayStatus,
+} from "./modules/status-messages";
 import { getCurrentForecastFromWeatherServer } from "./modules/api-fetch";
 import { filterWeatherData } from "./modules/filter-data";
 import { getFormValue } from "./modules/handle-input";
@@ -17,9 +18,17 @@ const form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
 
 async function handleSubmit(event) {
-  const value = getFormValue(event);
-  const rawData = await getCurrentForecastFromWeatherServer(value);
-  const weatherData = filterWeatherData(rawData);
-  renderPageBasedOnData(weatherData);
+  try {
+    const value = getFormValue(event);
+    displayStatus("Gathering Weather Info");
+    const rawData = await getCurrentForecastFromWeatherServer(value);
+    displayStatus("Displaying Weather Info");
+    const weatherData = filterWeatherData(rawData);
+    renderPageBasedOnData(weatherData);
+    clearMessages();
+  } catch (error) {
+    console.log(error);
+    displayError(error);
+  }
   form.reset();
 }
