@@ -7,20 +7,23 @@
     <title>Weather App</title>
   </head>
   <body>
-    <form>
-      <input
-        type="text"
-        placeholder="Enter City, State/Country"
-        name="location"
-        autocomplete="off"
-      />
-      <input type="submit" value="Get Weather" />
+    <form class="form">
+      <div>
+        <input
+          class="form__input-box"
+          type="text"
+          placeholder="Enter City, State/Country"
+          name="location"
+          autocomplete="off"
+        />
+        <input class="form__submit" type="submit" value="Get Weather" />
+      </div>
       <span class="unit-toggle">
-        <span class="unit-toggle__letter">F</span>
+        <span class="unit-toggle__letter unit-toggle__letter--F">F</span>
         <span class="unit-toggle__background">
           <span class="unit-toggle__button"></span>
         </span>
-        <span class="unit-toggle__letter">C</span>
+        <span class="unit-toggle__letter unit-toggle__letter--C">C</span>
       </span>
     </form>
     <div class="status-message"></div>
