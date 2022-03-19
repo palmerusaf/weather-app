@@ -1,6 +1,6 @@
-$color-C: rgb(55, 148, 179);
+$color-C: rgb(38, 103, 124);
 $color-F: rgb(219, 85, 85);
-$toggle-outline:rgb(26, 26, 26);
+$toggle-outline: rgb(26, 26, 26);
 
 * {
   font-family: Arial, Helvetica, sans-serif;
@@ -9,9 +9,23 @@ $toggle-outline:rgb(26, 26, 26);
   box-sizing: border-box;
 }
 
-form {
+.title{
+  text-align: center;
+  padding: .75em;
+}
+
+.form {
   display: flex;
-  padding: 1em;
+  padding: 0.77em;
+  justify-content: space-between;
+  background-color: burlywood;
+  &__input-box {
+    width: 12.5em;
+    border-radius: 5px;
+    text-align: center;
+  }
+  &__submit {
+  }
 }
 
 .unit-toggle {
@@ -41,14 +55,14 @@ form {
   }
   &__button {
     position: relative;
-    left: -15%;
+    left: -20%;
     padding: 7px;
     background-color: $toggle-outline;
     border-radius: 50%;
     transition: 300ms;
     &--C {
       transition: 300ms;
-      left: 15%;
+      left: 20%;
     }
   }
 }
