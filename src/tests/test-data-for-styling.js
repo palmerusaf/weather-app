@@ -18,7 +18,9 @@ const testDataDayTime = {
   },
 };
 const testDataNightTime = testDataDayTime;
-testDataNightTime.current.is_day = 0;
+// testDataNightTime.current.is_day = 0;
+// testDataNightTime.current.condition.icon =
+  "https://cdn.weatherapi.com/weather/64x64/night/113.png";
 
 renderPageBasedOnData(testDataDayTime);
 // renderPageBasedOnData(testDataNightTime);
