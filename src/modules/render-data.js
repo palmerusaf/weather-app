@@ -10,6 +10,7 @@ export function renderPageBasedOnData(data) {
   displayContainer.appendChild(currentWeatherDisplay);
 
   changeStyleToDayOrNight(current, displayContainer);
+  setTempUnitDefaultBasedOnArea(data);
 }
 
 function renderLocationName(location) {
@@ -77,11 +78,7 @@ function renderCurrentWeather(current) {
       label.textContent = temperatureLabelText;
 
       const tempInC = document.createElement("span");
-      tempInC.classList.add(
-        "temperature__c",
-        "temperature__data",
-        "temperature--hidden"
-      );
+      tempInC.classList.add("temperature__c", "temperature__data");
       tempInC.textContent = ` ${temperatureData[0]} C`;
       label.appendChild(tempInC);
 
@@ -117,5 +114,42 @@ function changeStyleToDayOrNight(current) {
   } else {
     displayContainer.classList.add("night");
     displayContainer.classList.remove("day");
+  }
+}
+
+function setTempUnitDefaultBasedOnArea(data) {
+  if (data.areaUsesFahrenheit) {
+    hideCelsiusTemps();
+    setToggleToF();
+  } else {
+    hideFahrenheitTemps();
+    setToggleToC();
+  }
+
+  function hideCelsiusTemps() {
+    hideTemps("c");
+  }
+
+  function hideFahrenheitTemps() {
+    hideTemps("f");
+  }
+
+  function hideTemps(unit) {
+    const temps = [...document.querySelectorAll(`.temperature__${unit}`)];
+    temps.forEach((temp) => temp.classList.add("temperature--hidden"));
+  }
+
+  function setToggleToC() {
+    const toggleBackground = document.querySelector(".unit-toggle__background");
+    const toggleButton = document.querySelector(".unit-toggle__button");
+    toggleBackground.classList.add("unit-toggle__background--C");
+    toggleButton.classList.add("unit-toggle__button--C");
+  }
+
+  function setToggleToF() {
+    const toggleBackground = document.querySelector(".unit-toggle__background");
+    const toggleButton = document.querySelector(".unit-toggle__button");
+    toggleBackground.classList.remove("unit-toggle__background--C");
+    toggleButton.classList.remove("unit-toggle__button--C");
   }
 }
