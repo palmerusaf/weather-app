@@ -77,7 +77,11 @@ function renderCurrentWeather(current) {
       label.textContent = temperatureLabelText;
 
       const tempInC = document.createElement("span");
-      tempInC.classList.add("temperature__c", "temperature__data", "hidden");
+      tempInC.classList.add(
+        "temperature__c",
+        "temperature__data",
+        "temperature--hidden"
+      );
       tempInC.textContent = ` ${temperatureData[0]} C`;
       label.appendChild(tempInC);
 

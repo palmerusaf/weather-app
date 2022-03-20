@@ -17,7 +17,7 @@ function changeClassForTemperatures() {
   const tempsInC = [...document.querySelectorAll(".temperature__c")];
   const tempsInF = [...document.querySelectorAll(".temperature__f")];
   const allTemps = tempsInC.concat(tempsInF);
-  allTemps.forEach((temp) => temp.classList.toggle("hidden"));
+  allTemps.forEach((temp) => temp.classList.toggle("temperature--hidden"));
 }
 
 function isDisplayEmpty() {
