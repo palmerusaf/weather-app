@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
   <script defer src="main.js"></script></head>
-  <body>
+  <body class="flex-col">
     <h1 class="title">Weather App</h1>
     <div class="flex-col form-container">
-      <form class="form">
+      <form class="form flex">
         <div class="flex-col">
           <input
             class="form__input-box"
@@ -20,9 +20,9 @@
           />
           <input class="form__submit" type="submit" value="Get Weather" />
         </div>
-        <span class="unit-toggle">
+        <span class="unit-toggle flex">
           <span class="unit-toggle__letter unit-toggle__letter--F">F</span>
-          <span class="unit-toggle__background">
+          <span class="unit-toggle__background flex">
             <span class="unit-toggle__button"></span>
           </span>
           <span class="unit-toggle__letter unit-toggle__letter--C">C</span>
@@ -30,6 +30,6 @@
       </form>
       <div class="status-message"></div>
     </div>
-    <div class="display-container"></div>
+    <div class="display-container flex-col"></div>
   </body>
 </html>
