@@ -1,5 +1,6 @@
 // TO-DO remove test
-import './tests/test-data-for-styling'
+// import './tests/test-data-for-styling'
+import './tests/uses-fahrenheit-tests'
 // TO-DO remove test
 
 import "./style.scss";
