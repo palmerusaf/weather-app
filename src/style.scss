@@ -15,7 +15,7 @@ $title-color: #feb101;
 $form-area-color: #feb101;
 $button-color: #feb101;
 $button-color-hover: #feb101;
-$display-msg-transition: 700ms;
+$display-msg-transition: 300ms;
 
 * {
   padding: 0;
@@ -104,8 +104,9 @@ body {
   height: 1em;
   margin-top: 0.4em;
   white-space: nowrap;
+  font-family: 'titleFont';
   &--error {
-    color: $color-F;
+    color: red;
   }
   &--visible {
     transform: scale(1);
