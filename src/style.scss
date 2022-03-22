@@ -1,16 +1,26 @@
-$color-C: #0073db;
+@font-face {
+  font-family: "titleFont";
+  src: url("./fonts/PermanentMarker-Regular.ttf");
+}
+
+$color-C: rgb(55, 55, 241);
 $color-F: rgb(219, 85, 85);
 $toggle-outline: rgb(26, 26, 26);
-$title-color: white;
-$form-area-color: burlywood;
+$title-color: #ad8b73;
+$form-area-color: #ceab93;
+$button-color: #e3caa5;
+$button-color-hover: #fffbe9;
 $display-msg-transition: 700ms;
 
 * {
   white-space: nowrap;
-  font-family: Arial, Helvetica, sans-serif;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: $button-color-hover;
 }
 
 .flex-col {
@@ -23,9 +33,15 @@ $display-msg-transition: 700ms;
 }
 
 .title {
+  font-family: "titleFont";
   background-color: $title-color;
-  text-align: center;
   padding: 0.5em;
+  &__letter {
+  }
+  &__word {
+    margin-left: -0.6em;
+    font-size: 0.5em;
+  }
 }
 
 .form-container {
@@ -41,11 +57,14 @@ $display-msg-transition: 700ms;
     text-align: center;
   }
   &__submit {
-    background-color: $form-area-color;
+    background-color: $button-color;
     border-radius: 6px;
     margin-top: 0.4em;
     padding: 0 0.3em;
     align-self: flex-start;
+    &:hover {
+      background-color: $button-color-hover;
+    }
   }
 }
 
