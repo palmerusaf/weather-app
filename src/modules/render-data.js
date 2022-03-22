@@ -140,16 +140,16 @@ function setTempUnitDefaultBasedOnArea(data) {
   }
 
   function setToggleToC() {
-    const toggleBackground = document.querySelector(".unit-toggle__background");
-    const toggleButton = document.querySelector(".unit-toggle__button");
-    toggleBackground.classList.add("unit-toggle__background--C");
-    toggleButton.classList.add("unit-toggle__button--C");
+    const cUnit=document.querySelector('.unit-toggle__C')
+    cUnit.classList.add('unit-toggle--active')
+    const fUnit=document.querySelector('.unit-toggle__F')
+    fUnit.classList.remove('unit-toggle--active')
   }
 
   function setToggleToF() {
-    const toggleBackground = document.querySelector(".unit-toggle__background");
-    const toggleButton = document.querySelector(".unit-toggle__button");
-    toggleBackground.classList.remove("unit-toggle__background--C");
-    toggleButton.classList.remove("unit-toggle__button--C");
+    const cUnit=document.querySelector('.unit-toggle__C')
+    cUnit.classList.remove('unit-toggle--active')
+    const fUnit=document.querySelector('.unit-toggle__F')
+    fUnit.classList.add('unit-toggle--active')
   }
 }

@@ -54,7 +54,7 @@ body {
 }
 
 .form {
-  justify-content: space-between;
+  justify-content: center;
   &__input-box {
     width: 12.5em;
     border-radius: 5px;
@@ -91,7 +91,8 @@ body {
   &__input-box {
     border: none;
     background: none;
-    &:focus {
+    &:focus,
+    &:hover {
       outline: none;
     }
   }
@@ -113,40 +114,25 @@ body {
 }
 
 .unit-toggle {
+  display: flex;
   align-items: center;
-  &__letter {
-    margin: 0 0.38em;
-    &--C {
-      color: $color-C;
-    }
-    &--F {
-      color: $color-F;
-    }
-  }
-  &__background {
-    align-items: center;
-    justify-content: center;
-    background-color: $color-F;
-    border-radius: 25px;
-    width: 2.1rem;
-    border: solid $toggle-outline 1px;
+  font-family: "titleFont";
+  font-size: 1.5em;
+  margin-left: 0.6em;
+  background: none;
+  border: none;
+  transition: 300ms;
+  &--active {
+    transform: scale(1.2);
+    font-weight: 600;
     transition: 300ms;
-    &--C {
-      transition: 300ms;
-      background-color: $color-C;
-    }
+    color: red;
   }
-  &__button {
-    position: relative;
-    left: -20%;
-    padding: 7px;
-    background-color: $toggle-outline;
-    border-radius: 50%;
+  &:focus,
+  &:hover {
     transition: 300ms;
-    &--C {
-      transition: 300ms;
-      left: 20%;
-    }
+    transform: scale(1.2);
+    outline: none;
   }
 }
 

@@ -20,8 +20,8 @@
       <span class="title__word">orcast</span>
     </h1>
     <div class="flex-col form-container">
-      <form class="form flex">
-        <div class="flex search-bar">
+      <div class="form flex">
+        <form class="flex search-bar">
           <input
             class="search-bar__submit-button material-icons-outlined"
             type="submit"
@@ -34,15 +34,13 @@
             name="location"
             autocomplete="off"
           />
-        </div>
-        <span class="unit-toggle flex">
-          <span class="unit-toggle__letter unit-toggle__letter--F">F</span>
-          <span class="unit-toggle__background flex">
-            <span class="unit-toggle__button"></span>
-          </span>
-          <span class="unit-toggle__letter unit-toggle__letter--C">C</span>
-        </span>
-      </form>
+        </form>
+        <button class="unit-toggle flex">
+          <span class="unit-toggle--active unit-toggle__F">F</span>
+          /
+          <span class="unit-toggle__C">C</span>
+        </button>
+      </div>
       <div class="status-message"></div>
     </div>
     <div class="display-container flex-col"></div>
