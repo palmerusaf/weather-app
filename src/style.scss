@@ -3,11 +3,11 @@
   src: url("./fonts/PermanentMarker-Regular.ttf");
 }
 
-$color-C: rgb(55, 55, 241);
-$color-F: rgb(219, 85, 85);
+$color-C: #0073db;
+$color-F: #fff100;
 $toggle-outline: rgb(26, 26, 26);
-$title-color: #ad8b73;
-$form-area-color: #ceab93;
+$title-color: #feb101;
+$form-area-color: #feb101;
 $button-color: #e3caa5;
 $button-color-hover: #fffbe9;
 $display-msg-transition: 700ms;
@@ -64,6 +64,31 @@ body {
     align-self: flex-start;
     &:hover {
       background-color: $button-color-hover;
+    }
+  }
+}
+
+.search-bar {
+  background-color: whitesmoke;
+  padding: 0.3em;
+  width: 20em;
+  border: solid 1px black;
+  border-radius: 50px;
+  &__submit-button {
+    border: none;
+    background: none;
+    &:focus,
+    &:hover {
+      outline: none;
+      transition: 300ms;
+      transform: scale(1.2);
+    }
+  }
+  &__input-box {
+    border: none;
+    background: none;
+    &:focus {
+      outline: none;
     }
   }
 }
