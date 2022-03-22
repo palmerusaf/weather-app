@@ -25,6 +25,8 @@ $display-msg-transition: 300ms;
 
 body {
   background-color: $button-color-hover;
+  width: 100vw;
+  height: 100vh;
 }
 
 .flex-col {
@@ -38,23 +40,16 @@ body {
 
 .title {
   font-family: "titleFont";
-  background-color: $title-color;
-  padding: 0.5em;
-  &__letter {
-  }
+  text-align: center;
   &__word {
     margin-left: -0.6em;
     font-size: 0.5em;
   }
 }
 
-.form-container {
-  padding: 0.77em;
-  background-color: $form-area-color;
-}
-
 .form {
   justify-content: center;
+  margin: 0 .77em;
   &__input-box {
     width: 12.5em;
     border-radius: 5px;
@@ -104,7 +99,8 @@ body {
   height: 1em;
   margin-top: 0.4em;
   white-space: nowrap;
-  font-family: 'titleFont';
+  font-family: "titleFont";
+  text-align: center;
   &--error {
     color: red;
   }
@@ -151,8 +147,9 @@ body {
 .display-container {
   padding: 1em;
   width: 18em;
+  min-height: 14.5em;
   border-radius: 1em;
-  margin-top: 2.5em;
+  margin-top: 1.0em;
   align-self: center;
   color: white;
   font-family: "dataFont";
@@ -202,4 +199,10 @@ body {
   background: url("./img/night.jpg");
   background-position: center;
   background-size: cover;
+}
+
+@media screen and (min-height: 420px) {
+  .display-container {
+    margin: 2.5em 0;
+  }
 }
