@@ -36,4 +36,5 @@ async function handleSubmit(event) {
     displayError(error);
   }
   form.reset();
+  form['location'].blur();
 }
