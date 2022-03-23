@@ -3,7 +3,7 @@ const API_KEY = "9bcb1c619a1d4e52b5f105818221403";
 async function getCurrentForecastFromWeatherServer(queryLocation) {
   try {
     const response = await fetch(
-      `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${queryLocation}&days=7&aqi=no`
+      `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${queryLocation}&days=7&aqi=no`
     );
     const weatherData = await response.json();
     return weatherData;
@@ -14,4 +14,4 @@ async function getCurrentForecastFromWeatherServer(queryLocation) {
   }
 }
 
-export {getCurrentForecastFromWeatherServer};
+export { getCurrentForecastFromWeatherServer };
