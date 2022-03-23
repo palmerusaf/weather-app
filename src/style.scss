@@ -49,7 +49,7 @@ body {
 
 .form {
   justify-content: center;
-  margin: 0 .77em;
+  margin: 0 0.77em;
   &__input-box {
     width: 12.5em;
     border-radius: 5px;
@@ -149,7 +149,7 @@ body {
   width: 18em;
   min-height: 14.5em;
   border-radius: 1em;
-  margin-top: 1.0em;
+  margin-top: 1em;
   align-self: center;
   color: white;
   font-family: "dataFont";
@@ -201,8 +201,31 @@ body {
   background-size: cover;
 }
 
+.footer {
+  display: none;
+}
+
 @media screen and (min-height: 420px) {
   .display-container {
     margin: 2.5em 0;
+  }
+
+  .footer {
+    display: flex;
+    margin-top: auto;
+    margin-bottom: .3em;
+    justify-content: center;
+    width: 100%;
+    &__link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: black;
+      font-family: "dataFont";
+    }
+    &__icon {
+      width: 1.5em;
+      margin-left: 0.2em;
+    }
   }
 }
