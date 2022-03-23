@@ -1,7 +1,3 @@
-// TO-DO remove test
-import "./tests/test-data-for-styling";
-// TO-DO remove test
-
 import "./style.scss";
 import {
   clearMessages,
