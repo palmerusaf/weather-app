@@ -7,17 +7,17 @@ export function handleUnitToggleClick(event) {
 }
 
 function changeClassForToggleButton() {
-  const buttonBackground = document.querySelector(".unit-toggle__background");
-  const button = document.querySelector(".unit-toggle__button");
-  buttonBackground.classList.toggle("unit-toggle__background--C");
-  button.classList.toggle("unit-toggle__button--C");
+    const cUnit=document.querySelector('.unit-toggle__C')
+    cUnit.classList.toggle('unit-toggle--active')
+    const fUnit=document.querySelector('.unit-toggle__F')
+    fUnit.classList.toggle('unit-toggle--active')
 }
 
 function changeClassForTemperatures() {
   const tempsInC = [...document.querySelectorAll(".temperature__c")];
   const tempsInF = [...document.querySelectorAll(".temperature__f")];
   const allTemps = tempsInC.concat(tempsInF);
-  allTemps.forEach((temp) => temp.classList.toggle("hidden"));
+  allTemps.forEach((temp) => temp.classList.toggle("temperature--hidden"));
 }
 
 function isDisplayEmpty() {

@@ -1,13 +1,17 @@
-export  function filterWeatherData(weatherData) {
+export function filterWeatherData(weatherData) {
   if (weatherData.error) {
     throw weatherData.error.message;
   }
   const location = filterLocation(weatherData.location);
   const current = filterCurrent(weatherData.current);
+  const areaUsesFahrenheit = doesAreaUseFahrenheit(
+    weatherData.location.country
+  );
 
   return {
     location,
     current,
+    areaUsesFahrenheit,
   };
 }
 
@@ -46,4 +50,25 @@ function filterCondition(condition) {
   const text = condition.text;
   const icon = "https:" + condition.icon;
   return { text, icon };
+}
+
+function doesAreaUseFahrenheit(area) {
+  const areasThatUseFahrenheit = [
+    "Palau",
+    "Bermuda",
+    "Belize",
+    "Turks and Caicos Islands",
+    "Liberia",
+    "Bahamas",
+    "Saint Kitts and Nevis",
+    "Montserrat",
+    "Cayman Islands",
+    "Antigua and Barbuda",
+    "Virgin Islands",
+    "Micronesia",
+    "United States of America",
+    "Marshall Islands",
+  ];
+
+  return areasThatUseFahrenheit.includes(area);
 }

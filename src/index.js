@@ -1,3 +1,4 @@
+import "./style.scss";
 import {
   clearMessages,
   displayError,
@@ -31,4 +32,5 @@ async function handleSubmit(event) {
     displayError(error);
   }
   form.reset();
+  form['location'].blur();
 }

@@ -10,6 +10,7 @@ export function renderPageBasedOnData(data) {
   displayContainer.appendChild(currentWeatherDisplay);
 
   changeStyleToDayOrNight(current, displayContainer);
+  setTempUnitDefaultBasedOnArea(data);
 }
 
 function renderLocationName(location) {
@@ -77,7 +78,7 @@ function renderCurrentWeather(current) {
       label.textContent = temperatureLabelText;
 
       const tempInC = document.createElement("span");
-      tempInC.classList.add("temperature__c", "temperature__data", "hidden");
+      tempInC.classList.add("temperature__c", "temperature__data");
       tempInC.textContent = ` ${temperatureData[0]} C`;
       label.appendChild(tempInC);
 
@@ -113,5 +114,42 @@ function changeStyleToDayOrNight(current) {
   } else {
     displayContainer.classList.add("night");
     displayContainer.classList.remove("day");
+  }
+}
+
+function setTempUnitDefaultBasedOnArea(data) {
+  if (data.areaUsesFahrenheit) {
+    hideCelsiusTemps();
+    setToggleToF();
+  } else {
+    hideFahrenheitTemps();
+    setToggleToC();
+  }
+
+  function hideCelsiusTemps() {
+    hideTemps("c");
+  }
+
+  function hideFahrenheitTemps() {
+    hideTemps("f");
+  }
+
+  function hideTemps(unit) {
+    const temps = [...document.querySelectorAll(`.temperature__${unit}`)];
+    temps.forEach((temp) => temp.classList.add("temperature--hidden"));
+  }
+
+  function setToggleToC() {
+    const cUnit=document.querySelector('.unit-toggle__C')
+    cUnit.classList.add('unit-toggle--active')
+    const fUnit=document.querySelector('.unit-toggle__F')
+    fUnit.classList.remove('unit-toggle--active')
+  }
+
+  function setToggleToF() {
+    const cUnit=document.querySelector('.unit-toggle__C')
+    cUnit.classList.remove('unit-toggle--active')
+    const fUnit=document.querySelector('.unit-toggle__F')
+    fUnit.classList.add('unit-toggle--active')
   }
 }
